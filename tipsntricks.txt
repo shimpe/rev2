@@ -1,0 +1,127 @@
+EFFICIENCY INCREASES:
+*********************
+
+EFFICIENT SOUND DESIGN:
+* pre-define some modulation source / destination settings and also other patch settings, save it to a default patch and start from there so you have to menu-dive / turn those rotary knobs less when making new presets... (luk vermeir)
+
+POTS:
+* Trouble getting the exact value you want with some of the pots? (for example cutoff and resonance) because the values would sometimes skip a couple of numbers when turned. In these cases you can use the Value knob next to the display to fine tune the current setting that you're changing. (jg666)
+* Holding misc parameters button to move the knob where you want it to be to avoid jumping. Take cutoff for example.. You can tell the cutoff is closed a lot but the knob is wide open. You can hold the Misc Param/Show button to kind of mute the knob while you move it closer to the range you know its actually at. (philroyjenkins)
+
+SHORTCUTS:
+* in mod matrix, 
+    * change source by pressing source button and turning amount button (aeonn)
+    * change amount by turning amount button (aeonn)
+    * change destination by pressing destination button and turning amount button (aeonn)
+    * hold source button and press piano key several times to cycle through different options: velocity, pressure, note number (aeonn)
+* hold lfo button and turn knob to make connection; if you move pan spread button you link to actual panning instead of spread (philroyjenkins)
+    * try audio rate (philroyjenkins)
+* hold misc button and move pitch wheel to edit pitch bend range (philroyjenkins)
+
+STARTUP PATCH:
+* Choose the patch you want it to open with, then access the global parameters, then exit. The Rev should now open up with your selected patch. (MDMA)
+
+SOUND DESIGN:
+*************
+
+ADDITIVE MODULATION:
+* For example: Mod slot 1: Aftertouch -> Mod Amount: 127 -> Oscillator 1 Frequency; Mod slot 2: Aftertouch -> Mod Amount: 43 -> Oscillator 1 Frequency; This effectively results in: Aftertouch -> Mod Amount: 170 -> Oscillator 1 Frequency (Paul Dither).
+* For example: Env3 Amount = 64, so Env3 goes from 0 to 64 and back again to 0. Set Mod1 Source = Env3, Mod1 Dest = LFO 1 Amount, Mod1 Amount = 32, LFO1 Amount = 32. Then in total LFO1 Amount will be 32 + 32 + [0..64] = [64..128], all summed up. (kris)
+    * Note: as a result final value can become bigger than 127 (Paul Dither)
+
+AUTO CHORD:
+* Use a sub OSC so you have a note and an octave. Use OSC 2 tuned to D#. Assign mod wheel to OSC2 pitch with an amount of 2. Now you can use pitch wheel to shift between major/minor chord. (philroyjenkins)
+
+AUTOMATION:
+* different ways to automate parameters
+    * LFOs: automation follows simple wave forms, but LFOs can be modulated using other LFOs leading to complex behaviour
+    * MOD matrix to modulate destination based on source (if source is something automatic, like an LFO, it's also automation)
+    * Gated Sequencer: up to 16 discrete steps for up to four different parameters which are repeated
+    * LPF envelope to automate filter cutoff
+    * VCA envelope to automate amplifier
+    * Auxiliary Envelope to automate any of the supported destinations
+
+CLICK:
+* Setting env 3 to pitch with a high AMT, no attack and a very quick delay. Adjust ENV AMT to taste. (philroyjenkins)
+    * You could just map velocity straight to osc mix via the mod matrix and have env 3 serving as a nice little click. (philroyjenkins)
+    
+DEBUG MENU:
+* Hold up + down button and press global parameters button (AlainHubert)
+
+DETUNE:
+* depending on position on keyboard: Mod slot to route Note Number to the pitch of one oscillator, say Osc 2, with a small value, like 1. Set Osc Mix so you can hear both oscillators, then bring down the fine tuning of Osc 2 to -20 or so. Set this way, you'll have a small difference in pitch between the oscillators that varies dependent upon where you're playing on the keyboard. Use the fine tune control to control how in or out of tune the second oscillator is as you move up or down the keybed. (jurfin)
+* routing Noise to Osc 1 and 2 pitches, set at 0 for the amount. Then set the mod wheel to control the depth for each of those slots, +1 and -1 respectively, or +1 on only one Osc, leaving the other alone. This allows for very fine control over small tuning changes via the mod wheel. (jurfin)
+
+ENV AMOUNT:
+* envelope varies between 0 and ENV AMOUNT
+
+ENVELOPE RESPONSE CURVE SHAPE:
+* use "recursive modulation", i.e. modulate the desired envelope stage with the envelope itself. This way, you can program a logarithmic or exponential behaviour, depending on the modulation amount setting, and whether it's positive or negative. So if you wanna modulate the VCA envelope's attack phase, you choose "Env VCA" as the modulation source and "VCA Attack" as the modulation destination. The bipolar modulation amount will then basically define how strong and which way the VCA Attack is going to get "bent.". This btw also works for the opposite of the goal you try to achieve in order to simulate exponential curves for extra snappy bass or brass sounds. (Paul Dither)
+
+FILTER:
+* If you have the cutoff lowered and instead sweep the "key amount" it its basically like sweeping the filter but it has a different response since it is affecting notes differently as you go up the keyboard. (philroyjenkins)
+* "playing the filter" by cranking resonance and setting key tracking to 64 (jurfin)
+    * if out of tune, run calibration (AlainHubert)
+* When you deactivate both oscillators and use the filter to generate a sine with keytrack to 64 and resonance beyond self oscillation you can fine tune the filter by turning up the oscillator mix knob. Setting an LFO to OSC mix turned up to 64 makes some nice little vibrator effect. (batterydead)
+* you can use audio mod to function as a filter sweep. Of course, you could also just change the cutoff value to accomplish the same thing, but audio mod will do different things depending upon how you have Oscillator 1 set, so it's worth experimenting with. In case you're wondering how to change Osc 1 to effect audio mod without sending the oscillator through the filter, you can set your mix knob all the way to Osc 2, (with Osc 2 set to off) allowing you to make changes to Osc 1 without actually sending Osc 1 through the filter. (jurfin)
+
+
+FINE CONTROL:
+* Mod Amount of 1 is more than what you're looking for, you can use another slot for an envelope, the mod wheel, or velocity to control that initial Mod slot Amount, giving finer control of the range between 0 and 1. (jurfin)
+* You can stack keynote modulations a few times in a row to limit the range meaning the entirety of the effect happens within less octaves. So you could go from 0 noise to full noise in 3 octaves. (jurfin)
+* Try setting the Unison Detune to 0 and use the Osc Slop instead. Can be useful when the unison detune range isn't subtle enough. (Chimponaut)
+
+FX:
+* shimmer: fast square LFO on delay time (philroyjenkins)
+* organic warble: slow triangle low amount LFO on delay time (philroyjenkins)
+* crushed quality: audio rate LFO small amount on delay time (philroyjenkins)
+
+INIT PATCH:
+* hold up + down button and press the hold button (manual)
+
+LOOPER:
+* From INIT patch. (philroyjenkins)
+    * Set LFO to Cutoff Freq and turn Cutoff Freq about halfway down. 
+    * Set LFO to a Reverse Sawtooth wave with full amount and very slow Speed. Turn on Key Sync for the LFO.
+    * Turn on Hold and press a note. The sawtooth will fade it out and it will cycle through again and again
+    * The LFO Speed serves as the loop length while your cuttoff knob (and LFO AMT) serve as a sort of gate for the note lengths. Turn OFF/ON Hold to reset the loop. 
+    
+NEGATIVE VELOCITY:
+* Velocity knob only has positive values, yet sometimes you want velocity to have reverse polarity effect (e.g. make cutoff freq smaller as velocity increases). In that case you can use the Mod matrix to modulate a parameter using velocity with negative amount. (jurfin)
+
+RANDOMIZING LFO:
+* set the LFO to random, turn the frequency all the way down, and turn Key Sync on. When you map the LFO to Osc 1 pitch (for example) and play a single note repeatedly, you get not a continuous series of random pitches, but a repeating sequence of values. (notionsdepartment) To better randomize, either:
+    * increase LFO speed, but then you hear tone evolve on sustained chords (AlainHubert)
+    * set up mod slot to use velocity to modulate Osc Freq 1 and then randomize the velocity values (Chimponaut)
+
+RHODES:
+* If you?d like to mix in a dash of Rhodes authenticity, you can use a second oscillator to recreate the super-high pitched Rhodes tine noise. You can use a thin pulse wave or a triangle wave, and set the interval two octaves, nine half steps, and 50 cents above the main oscillator (this is the same as 33 half steps and 50 cents). You?ll want to fine tune the mix level. You might also need to open up the cutoff frequency to let that little guy through. (jurfin)
+
+ROUGHNESS:
+* noise as a mod source to modify filter cutoff by a very small amount (0-5).
+
+SEQUENCER:
+* You can have a sequence going on the rev2 and play on top of it. Playing with the Amps ENV can essentially bring in/out the sequence vs your live playing. (philroyjenkins)
+* Each track in the gated sequencer can have a different length leading to longer periods where the parameter settings repeat. The repeat period is the least common multiple of all the lengths. (manual)
+* To transpose poly sequencer: press "record" and hold it, then play the destination key. Transposing to middle C resets to default pitch. Other transpositions happen relative to distance to middle C. (manual)
+
+SHAPE MOD SLOP:
+* any LFO shape as slow as possible, low amount, with key sync on to the Shape Mod of one oscillator in a two oscillator patch. The idea here is that each time you press a new note, you shift the Shape Mod just a little bit, giving your oscillators just a bit of extra movement. (jurfin)
+    * assign the mod wheel to increase the frequency and depth of the LFO (jurfin)
+
+SMOOTH:
+* Reducing the Env Amout knob in Amp settings seems to smooth out the sound a bit. (jurfin)
+
+TREMOLO:
+* With Ring Mod on and tuning set all the way down to 0 or 1, you can get some really nice tremolo effects. 
+    * In conjunction with the mix knob it adds a little something extra that's different from only modulating the Amplifier or Panning settings. 
+    * turning Keytracking on makes the speed of the trem vary depending on the lowest note played. (jurfin)
+
+VIBRATO:
+* To spice up vibrato: apply a mid-paced (80ish or so) LFO to Osc. Slop for an interesting take on pitch vibrato. This gives something a little more lively than the typical LFO patched directly to Osc. Freq (jurfin)
+    * * let one of the LFOs add periodically 1 or 2 to FX parameter 1 gives a nice weird random character to the tremolo effect (Gerry Havinga)
+
+WARBLE:
+* set the mod wheel to control the noise level. Adding some noise to feed into the filter creates some very interesting textures and warbles.(jurfin)
+    * set the patch up with envelope 3 controlling noise, with a super slow attack, to bring in a bit of this funkiness over time for sustained chords
+    
